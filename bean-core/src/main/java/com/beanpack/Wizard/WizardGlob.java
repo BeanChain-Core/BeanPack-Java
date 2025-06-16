@@ -10,10 +10,10 @@ public class WizardGlob {
 
     private DB db;
 
-    public WizardGlob() throws Exception {
+    public WizardGlob(String path) throws Exception {
         Options options = new Options();
         options.createIfMissing(true);
-        db = factory.open(new File("data/WizardGlob"), options);
+        db = factory.open(new File(path), options);
     }
 
     
