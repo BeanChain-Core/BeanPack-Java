@@ -20,7 +20,7 @@ public class BaseContractTest {
         boolean initialized = false;
 
         @Override
-        public void loadIndentity(DB db, String contractName, String devKey){
+        public void loadIdentity(DB db, String contractName, String devKey){
 
         }
 
