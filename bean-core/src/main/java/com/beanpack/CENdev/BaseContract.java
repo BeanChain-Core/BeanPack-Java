@@ -58,7 +58,7 @@ public interface BaseContract {
      * loads contract address, hash, and pubKey from storage after contract is loaded and initialized by a CEN
      * 
      */
-    void loadIndentity(DB db, String contractName, String devKey);
+    void loadIdentity(DB db, String contractName, String devKey);
 
     /**
      * Called once at deployment time to initialize the contract state.

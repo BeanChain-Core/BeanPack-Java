@@ -38,6 +38,7 @@ public class MintTX extends TX {
             .add("capped", false)
             .add("openMint", false);
         
+        this.finalizeParams();
         
     }
 
@@ -57,6 +58,8 @@ public class MintTX extends TX {
             .add("mode", "mintMore")
             .add("tokenHash", tokenHash)
             .add("amount", amount);
+        
+        this.finalizeParams();
     }
 
     //Mint NFT
@@ -76,6 +79,8 @@ public class MintTX extends TX {
             .add("tokenHash", tokenHash)
             .add("tokenId", tokenId)
             .add("meta",meta);
+        
+        this.finalizeParams();
     }
 
     //Mint A NFT collection
