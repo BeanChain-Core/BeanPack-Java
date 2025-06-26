@@ -4,7 +4,7 @@
 
 This package is maintained by the **BeanChain Core Team** under **Outlandish Tech**, a division of **Outlandish Creative LLC**.
 
-> Current Version: `0.0.1`  
+> Current Version: `0.0.3`  
 > Actively maintained. Java is the first supported language, with **Go and other SDKs in progress**. If you're interested in helping bring multi-language SDK support to BeanChain, [reach out to the team](#contact).
 
 ---
