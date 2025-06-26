@@ -14,6 +14,7 @@ public class TXSorter {
     private List<TX> tokenCENTX = new ArrayList<>();
     private List<TX> stakeTX = new ArrayList<>();
     private List<TX> fundedCallTX = new ArrayList<>();
+    private List<TX> rejectedTX = new ArrayList<>();
 
     public void sort(List<TX> memPool) throws Exception {
         for (TX tx : memPool) {
@@ -44,7 +45,8 @@ public class TXSorter {
                     fundedCallTX.add(tx);
                     break;
                 default:
-                    System.out.println("ERROR: Unrecognized TX type for hash: " + tx.getTxHash());
+                    rejectedTX.add(tx);
+                    System.out.println("ERROR: Unrecognized TX type for hash: " + tx.getTxHash() + " ADDDED TO REJECTED LIST");
                     break;
             }
         }
@@ -61,6 +63,7 @@ public class TXSorter {
     public List<TX> getTokenCENTX() { return tokenCENTX; }
     public List<TX> getStakeTX() { return stakeTX; }
     public List<TX> getFundedCallTX() { return fundedCallTX; }
+    public List<TX> getRejectedTX() { return rejectedTX; }
 
     private int getLayer2Nonce(TX tx) {
         try {
