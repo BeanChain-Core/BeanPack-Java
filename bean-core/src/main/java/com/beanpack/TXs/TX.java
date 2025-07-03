@@ -6,6 +6,7 @@ import java.security.PrivateKey;
 
 import com.beanpack.Utils.*;
 import com.beanpack.crypto.*;
+import com.beanpack.logger.PackLoggerManager;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -101,7 +102,7 @@ public class TX {
             ObjectMapper objectMapper = new ObjectMapper();
             jsonString = objectMapper.writeValueAsString(this);
         } catch (Exception e) {
-            System.out.println(e);
+            PackLoggerManager.PackLoggerError("EXCEPTION: " + e.getMessage());
         }
         return jsonString;
     }

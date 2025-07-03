@@ -10,6 +10,7 @@ import com.beanpack.TXs.*;
 import com.beanpack.crypto.SHA256TransactionSigner;
 import com.beanpack.crypto.TransactionVerifier;
 import com.beanpack.crypto.WalletGenerator;
+import com.beanpack.logger.PackLoggerManager;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -101,7 +102,7 @@ public class Block {
             objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false); // Optional safety
             jsonString = objectMapper.writeValueAsString(this);
         } catch (Exception e) {
-            System.out.println(e);
+            PackLoggerManager.PackLoggerError("EXCEPTION: " + e.getMessage());
         }
         return jsonString;
     }
@@ -122,7 +123,7 @@ public class Block {
     
             return objectMapper.readValue(json, Block.class);
         } catch (Exception e) {
-            System.out.println(e);
+            PackLoggerManager.PackLoggerError("EXCEPTION: " + e.getMessage());
             return null;
         }
     }

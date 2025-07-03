@@ -1,6 +1,7 @@
 package com.beanpack.Models;
 
 import com.beanpack.Utils.beantoshinomics;
+import com.beanpack.logger.PackLoggerManager;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class StateWallet {
@@ -42,7 +43,7 @@ public class StateWallet {
             ObjectMapper objectMapper = new ObjectMapper();
             jsonString = objectMapper.writeValueAsString(this);
         } catch (Exception e) {
-            System.out.println(e);
+            PackLoggerManager.PackLoggerError("EXCEPTION: " + e.getMessage());
         }
         return jsonString;
     }
@@ -52,7 +53,7 @@ public class StateWallet {
             ObjectMapper objectMapper = new ObjectMapper();
             return objectMapper.readValue(json, StateWallet.class);
         } catch (Exception e) {
-            System.out.println(e);
+            PackLoggerManager.PackLoggerError("EXCEPTION: " + e.getMessage());
             return null;
         }
     }
