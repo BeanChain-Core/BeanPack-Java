@@ -82,7 +82,7 @@ public class TX {
         // String typeSafe = (type == null) ? "" : type;
 
         try {
-            String data = from + to + String.format("%.8f", amount) + timeStamp + nonce + gasFee; //  TODO: + metaSafe + typeSafe , add meta data to the hash so it cant be altered after tx validated
+            String data = from + to + String.format("%.6f", amount) + timeStamp + nonce + gasFee; //  TODO: + metaSafe + typeSafe , add meta data to the hash so it cant be altered after tx validated
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             byte[] hash = digest.digest(data.getBytes(StandardCharsets.UTF_8));
 
@@ -112,9 +112,10 @@ public class TX {
             ObjectMapper objectMapper = new ObjectMapper();
             TX tx = objectMapper.readValue(json, TX.class);
     
-            // 🔧 Enforce 8-decimal precision on amount
+            // 🔧 Enforce 6-decimal precision on amount
             if (tx != null) {
-                tx.amount = Math.round(tx.amount * 1e8) / 1e8;
+                tx.amount = Math.round(tx.amount * 1e6) / 1e6;
+                tx.txHash = tx.generateHash();
             }
     
             return tx;
@@ -130,6 +131,10 @@ public class TX {
         byte[] transactionHash = hex.hexToBytes(this.txHash);
         signature = SHA256TransactionSigner.signSHA256Transaction(privateKey, transactionHash);
         
+    }
+
+    public void addRejectionFlag(String rejectionMessage){
+
     }
 
     public void debugHashValues() {

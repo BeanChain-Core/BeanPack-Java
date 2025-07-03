@@ -44,7 +44,7 @@ public class TXTest {
     }
 
     @Test
-    public void testAmountIsRoundedTo8Decimals() {
+    public void testAmountIsRoundedTo6Decimals() {
         TX tx = TX.fromJSON("""
         {
             "from": "bean1",
@@ -60,7 +60,8 @@ public class TXTest {
         """);
 
         assertNotNull(tx);
-        assertEquals(0.12345679, tx.getAmount(), 1e-9);
+        // 0.123456789123 → rounded to 6 decimals → 0.123457
+        assertEquals(0.123457, tx.getAmount(), 1e-9);
     }
 
     @Test
