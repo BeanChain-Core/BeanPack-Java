@@ -46,7 +46,7 @@ public class TXSorter {
                     break;
                 default:
                     rejectedTX.add(tx);
-                    System.out.println("ERROR: Unrecognized TX type for hash: " + tx.getTxHash() + " ADDDED TO REJECTED LIST");
+                    //System.out.println("ERROR: Unrecognized TX type for hash: " + tx.getTxHash() + " ADDDED TO REJECTED LIST");
                     break;
             }
         }
