@@ -10,7 +10,6 @@ import java.util.Random;
 
 import com.beanpack.logger.PackLoggerManager;
 
-import wiz.crypt.CryptKeeper;
 
 public class wizard {
     

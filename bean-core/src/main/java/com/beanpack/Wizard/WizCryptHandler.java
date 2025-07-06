@@ -13,7 +13,6 @@ import java.util.Scanner;
 import com.beanpack.beanify.Branding;
 import com.beanpack.beanify.Color;
 import wiz.crypt.CryptKeeper;
-import com.beanpack.Wizard.wizard;
 
 public class WizCryptHandler {
     public static CryptKeeper wizCrypt;

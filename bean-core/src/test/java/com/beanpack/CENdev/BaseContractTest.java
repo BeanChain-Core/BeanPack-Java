@@ -2,7 +2,6 @@ package com.beanpack.CENdev;
 
 import org.junit.jupiter.api.Test;
 
-import com.beanpack.CENdev.BaseContract;
 import com.beanpack.TXs.CENCALL;
 
 import static org.junit.jupiter.api.Assertions.*;

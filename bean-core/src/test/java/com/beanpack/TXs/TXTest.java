@@ -2,7 +2,6 @@ package com.beanpack.TXs;
 
 import org.junit.jupiter.api.Test;
 
-import com.beanpack.TXs.TX;
 import com.beanpack.crypto.WalletGenerator;
 
 import java.security.PrivateKey;

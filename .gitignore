@@ -1,1 +1,33 @@
-/.vscode
+# Compiled class files
+*.class
+
+# Maven target directory
+*target/
+
+# Logs
+*.log
+
+# VSCode settings
+.vscode/
+
+# IntelliJ IDEA
+*.iml
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Java-specific
+*.jar
+*.war
+*.ear
+
+# Environment files
+.env
+
+# Test Configs ** Potential Secret Keys 
+/config.docs

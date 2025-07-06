@@ -2,7 +2,6 @@ package com.beanpack.beanify;
 
 import org.junit.jupiter.api.Test;
 
-import com.beanpack.beanify.Branding;
 
 import static org.junit.jupiter.api.Assertions.*;
 

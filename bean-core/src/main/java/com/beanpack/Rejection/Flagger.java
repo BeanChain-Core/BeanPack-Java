@@ -2,7 +2,6 @@ package com.beanpack.Rejection;
 
 import com.beanpack.Utils.MetaHelper;
 import com.beanpack.logger.PackLoggerManager;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import java.util.Iterator;
