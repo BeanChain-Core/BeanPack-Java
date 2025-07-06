@@ -1,6 +1,9 @@
 package com.beanpack.Wizard;
 
 import org.iq80.leveldb.*;
+
+import com.beanpack.logger.PackLoggerManager;
+
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -54,7 +57,7 @@ public class WizardGlob {
                 keys.add(asString(iterator.peekNext().getKey()));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            PackLoggerManager.PackLoggerError("EXCEPTION: " + e.getMessage());
         }
         return keys;
     }

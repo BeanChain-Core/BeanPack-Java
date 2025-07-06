@@ -8,6 +8,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
 
+import com.beanpack.logger.PackLoggerManager;
+
+import wiz.crypt.CryptKeeper;
+
 public class wizard {
     
 
@@ -28,6 +32,7 @@ public class wizard {
 
         }
     }
+
 
     //password encrypted secure model 
     public static String getEncryptedWizardKey(String privateHash, String password) throws Exception{
@@ -126,7 +131,7 @@ public class wizard {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            PackLoggerManager.PackLoggerError("EXCEPTION: " + e.getMessage());
         }
 
         

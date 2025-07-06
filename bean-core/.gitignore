@@ -28,3 +28,6 @@ desktop.ini
 
 # Environment files
 .env
+
+# Test Configs ** Potential Secret Keys 
+/config.docs
