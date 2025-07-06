@@ -147,6 +147,19 @@ public class WizCryptHandler {
         }
     }
 
+    public static boolean wizEncryptConfig(){
+        try {
+            WizCryptHandler.wizCrypt.encryptFile(keyFile, configFolder);
+            keyFile.delete();
+            System.out.println(wizCryptMessageFactory("WizCrypt Encryption/Decryption: SUCCESS", "ENCRYPT-WIZ"));
+            return true;
+        } catch (Exception keeperDropException){
+            System.out.println(wizCryptMessageFactory("Failed to encrypt @WizConfig", "ERROR"));
+            //keeperDropException.printStackTrace();
+            return false;
+        }
+    }
+
     public static boolean decryptWizKeySquared(){
         try {
             WizCryptHandler.wizCrypt.decryptFile(new File(configFolder, wizFileEnc), configFolder);
@@ -202,6 +215,28 @@ public class WizCryptHandler {
             return null;
             
         }
+    }
+
+    public static void encryptConfig(){
+        File keyFileBackup = keyFile;
+        keyFile = new File(configFolder, "beanchain.config.properties");
+        wizFileEnc = "beanchain.config.properties.enc";
+        bootWizCrypt(password);
+        wizEncryptConfig();
+        keyFile = keyFileBackup;
+        wizFileEnc = "wiz.txt.enc";
+        System.out.println(wizCryptMessageFactory("***Config Encrypted during RUNTIME***", "ENCRYPT")); 
+    }
+
+    public static void decryptConfig(){
+        File keyFileBackup = keyFile;
+        keyFile = new File(configFolder, "beanchain.config.properties");
+        wizFileEnc = "beanchain.config.properties.enc";
+        bootWizCrypt(password);
+        decryptWizKeySquared();
+        keyFile = keyFileBackup;
+        wizFileEnc = "wiz.txt.enc"; 
+        System.out.println(wizCryptMessageFactory("***Config Decrypted for OFFLINE access***", "DECRYPT"));   
     }
 
     public static void main(String [] args) throws Exception{
