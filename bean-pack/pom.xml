@@ -88,7 +88,7 @@
         <dependency>
             <groupId>wiz.crypt</groupId>
             <artifactId>cryptkeeper</artifactId>
-            <version>Crypt-Keeper-v0.0.0</version>
+            <version>0.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.tinylog</groupId>

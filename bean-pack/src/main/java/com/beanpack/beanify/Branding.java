@@ -3,22 +3,24 @@ package com.beanpack.beanify;
 import com.beanpack.head;
 
 /**
- * The {@code Branding} class contains branding-related information for the application.
- * It includes a static representation of the application's logo in ASCII art format.
- * 
- * <p>The logo also incorporates the application's version, which is dynamically appended
- * from the {@code head.version} property.
- * 
+ * The {@code Branding} class contains branding-related ASCII art and identifiers for the application.
+ * <p>
+ * It includes a static representation of the application's logo as well as ASCII art for WizCrypt.
+ * The logo dynamically includes the version from {@code head.version}.
+ *
  * <p>Usage:
- * <pre>
+ * <pre>{@code
  *     System.out.println(Branding.logo);
- * </pre>
- * 
- * <p>Note: Ensure that the {@code head.version} property is properly initialized
- * before accessing the {@code logo} field to avoid runtime issues.
+ * }</pre>
+ *
+ * <p>Note: Ensure that {@code head.version} is initialized before accessing {@code logo}
+ * to avoid null or incorrect version rendering.
  */
 public class Branding {
     
+    /**
+     * The application banner logo, rendered in ASCII art with the dynamic version string appended.
+     */
     public static String logo = 
         "_____________________   _____    _______  _________   ___ ___    _____  .___ _______\n" + 
         "\\______   \\_   _____/  /  _  \\   \\      \\ \\_   ___ \\ /   |   \\  /  _  \\ |   |\\      \\\n" +  
@@ -28,6 +30,9 @@ public class Branding {
         "         \\/        \\/         \\/         \\/        \\/      \\/         \\/            \\/\n" +
         "                            B E A N C H A I N::" + head.version;    
 
+    /**
+     * The ASCII art banner for WizCrypt branding.
+     */
     public static String wizCrypt = 
      """
     
