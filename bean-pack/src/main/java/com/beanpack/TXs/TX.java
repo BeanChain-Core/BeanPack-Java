@@ -34,6 +34,7 @@ public class TX {
     private String status = "pending";
     private String type = "transfer";
     private String meta;
+    private String evo = "GENESIS.evo";
 
 
     public TX(){
@@ -63,6 +64,7 @@ public class TX {
     public String getStatus() {return status;}
     public String getType() {return type;}
     public String getMeta() {return meta;}
+    public String getEvo() {return evo;}
 
     public void setFrom(String from) {this.from = from;}
     public void setNonce(int nonce) {this.nonce = nonce;}
@@ -76,6 +78,7 @@ public class TX {
     public void setStatus(String status) {this.status = status;}
     public void setType(String type) {this.type = type;}
     public void setMeta(String meta) {this.meta = meta;}
+    public void setEvo(String evo) {this.evo = evo;}
 
     public String generateHash(){
         // String metaSafe = (meta == null) ? "" : meta;

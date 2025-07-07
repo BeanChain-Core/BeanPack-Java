@@ -5,6 +5,7 @@ public class BlockHeader {
     private int height;
     private String previousHash;
     private long gasFeeReward;
+    private String evo = "GENESIS.evo";
 
     public BlockHeader() {
     }
@@ -29,5 +30,8 @@ public class BlockHeader {
 
     public long getGasFeeReward() { return gasFeeReward; }
     public void setGasFeeReward(long gasFeeReward) { this.gasFeeReward = gasFeeReward; }
+
+    public String getEvo() {return evo;}
+    public void setEvo(String evo) {this.evo = evo;}
 }
 

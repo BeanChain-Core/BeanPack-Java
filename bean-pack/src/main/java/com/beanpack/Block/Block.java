@@ -6,12 +6,10 @@ import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.beanpack.TXs.*;
 import com.beanpack.crypto.SHA256TransactionSigner;
 import com.beanpack.crypto.TransactionVerifier;
 import com.beanpack.crypto.WalletGenerator;
 import com.beanpack.logger.PackLoggerManager;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -30,8 +28,6 @@ public class Block {
     @JsonProperty("header")
     private BlockHeader header;
     
-    @JsonIgnore
-    private transient List<TX> fullTransactions = new ArrayList<>();
 
     public int getHeight() {return height;}
     public String getMerkleRoot() {return merkleroot;}
@@ -216,13 +212,6 @@ public class Block {
         return this.merkleroot.equals(recalculatedRoot);
     }
 
-    public void setFullTransactions(List<TX> fullTransactions) {
-        this.fullTransactions = fullTransactions;
-    }
-    
-    public List<TX> getFullTransactions() {
-        return fullTransactions;
-    }
 
     public void initHeader(long gasFee){
         BlockHeader h = new BlockHeader();

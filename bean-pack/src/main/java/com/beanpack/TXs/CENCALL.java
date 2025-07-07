@@ -23,6 +23,7 @@ public class CENCALL {
     private String method;
     private String params;
     private ParamBuilder paramBuilder = new ParamBuilder();
+    private String evo = "GENESIS.evo";
 
     public String getCaller() { return caller; }
     public String getContract() { return contract; }
@@ -30,6 +31,7 @@ public class CENCALL {
     public String getCenIP() { return cenIP; }
     public String getMethod() { return method; }
     public String getParams() { return this.params;}
+    public String getEvo() {return evo;}
 
     public void setCaller(String caller) { this.caller = caller; }
     public void setCallerPublicKeyHex(String pubKey) { this.callerPublicKeyHex = pubKey; }
@@ -40,6 +42,7 @@ public class CENCALL {
     public void setContractHash(String contractHash) { this.contractHash = contractHash; }
     public void setCenIP(String cenIP) { this.cenIP = cenIP; }
     public void setMethod(String method) { this.method = method; }
+    public void setEvo(String evo) {this.evo = evo;}
     public void setParams(String paramsJson) {
         this.params = paramsJson;
         this.paramBuilder.loadFromJson(paramsJson); 
