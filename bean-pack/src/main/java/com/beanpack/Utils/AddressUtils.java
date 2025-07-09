@@ -21,6 +21,8 @@ public final class AddressUtils {
     static {
         Set<String> m = new HashSet<>();
         m.add("BEANX:0xBURNTOKEN");
+        m.add("MINTSYS");
+        m.add("BEANX:0xMINTSYS");
         SPECIAL_ADDRESSES = Collections.unmodifiableSet(m);
     }
 
