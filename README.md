@@ -2,7 +2,7 @@
 
 **BeanPack-Java** is the official Java SDK for the **BeanChain** blockchain network. It provides the foundational models, cryptographic utilities, wallet structures, and reusable components shared across all Java-based BeanChain projects — including validator nodes, contract execution nodes, reward engines, and developer tooling.
 
-> **Current Version:** `0.1.2`  
+> **Current Version:** `0.1.3`  
 > **Compatible with:** BeanNode v0.1.0+  
 > Java is the first supported language — Go, Python, and JavaScript SDKs are planned and in active development. Want to contribute? [Reach out to the team](#contact).
 
@@ -104,7 +104,7 @@ BeanPack-Java is available via GitHub Packages. To include it in a Maven project
 <dependency>
   <groupId>com.beanchain</groupId>
   <artifactId>bean-pack</artifactId>
-  <version>0.1.2</version>
+  <version>0.1.3</version>
 </dependency>
 ```
 
